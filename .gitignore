@@ -21,3 +21,11 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+.DS_Store
+.vscode/
+.gitignore
+
+#Docker related
+docker-compose.yml
+docker/

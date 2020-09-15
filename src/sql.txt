@@ -1,0 +1,77 @@
+------おさないさんのSQL講座-----------
+リレーショナルデータベース
+RDBLS MariaDB＝MySQL
+
+
+
+
+
+----lesson 5-10-------------
+docker-compose exec app mysql -h db -u book_log -D book_log -p
+CREATE TABLE companies (
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    establishment_date DATE,
+    founder VARCHAR(255),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) DEFAULT CHARACTER SET=UTF8MB4;
+-----------------
+
+-----------------基本の形-----------------
+
+INSERT INTO companies (
+    name,
+    establishment_date,
+    founder
+) VALUES (
+    'google',
+    '19-02-first',
+    'nanami iwasaki'
+);
+
+INSERT INTO review (
+    book_title,
+    author,
+    status,
+    rating,
+    comment,
+    created_at
+) VALUES (
+    'bbb',
+    'julia',
+    'not yet',
+    '51',
+    'not really',
+    '2019-09-04'
+);
+
+----------
+
+
+INSERT INTO note (
+category,
+title,
+memo,
+site_address,
+created_at
+)VALUES(
+'p',
+'About Kotaro',
+'He loves it',
+'Kotaro.com',
+'2020-09-13'
+);
+
+INSERT INTO note (
+    category,
+    title,
+    memo,
+    site_address,
+    created_at
+) VALUES (
+    'p',
+    'Kotaro',
+    'He loves fishes',
+    'Kotaro.com',
+    '2019-09-04'
+);
