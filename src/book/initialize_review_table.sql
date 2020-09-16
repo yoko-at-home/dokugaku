@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS review;
+
+CREATE TABLE review(
+id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+book_title VARCHAR(255),
+author VARCHAR(255),
+status VARCHAR(20),
+rating INTEGER,
+comment VARCHAR(500),
+created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)DEFAULT CHARSET=utf8mb4;
+
+function createTable($link)
+{
+    $createTableSql = <<<EOT
+CREATE TABLE reviews (
+    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    title VARCHAR(255),
+    author VARCHAR(100),
+    status VARCHAR(10),
+    score INTEGER,
+    summary VARCHAR(1000),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) DEFAULT CHARACTER SET=utf8mb4
+EOT;

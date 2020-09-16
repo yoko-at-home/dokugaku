@@ -29,21 +29,7 @@ INSERT INTO companies (
     'nanami iwasaki'
 );
 
-INSERT INTO review (
-    book_title,
-    author,
-    status,
-    rating,
-    comment,
-    created_at
-) VALUES (
-    'bbb',
-    'julia',
-    'not yet',
-    '51',
-    'not really',
-    '2019-09-04'
-);
+INSERT INTO review (book_title,author,status,rating,comment,created_at) VALUES ('test','test','3','5','test','2019-09-04');
 
 ----------
 
