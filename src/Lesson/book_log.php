@@ -35,35 +35,38 @@ function createReview()
     ];
 }
 
-function listReviews($reviews)
+function listReviews($link)
 {
     echo '--------------------------'  . PHP_EOL;
     echo '読書ログを表示します' . PHP_EOL;
 
-    foreach ($reviews as $review) {
-        echo '書籍名：' . $review['title'] . PHP_EOL;
+    $sql = 'SELECT id, book_title, author, status, rating, comment, created_at FROM review';
+    $results = mysqli_query($link, $sql); //成功したらmysqli_resultオブジェクトを返す
+    while ($review = mysqli_fetch_assoc($results)) //mysqli_queryの結果行を連想配列で取得する
+    {
+        // var_export($review);
+        echo '書籍名：' . $review['book_title'] . PHP_EOL;
         echo '著者名：' . $review['author'] . PHP_EOL;
-        echo '読書状況：' . $review['status'] . PHP_EOL;
+        echo '読書状況（1＝未読,2＝読んでる,3＝読了）：' . $review['status'] . PHP_EOL;
         echo '評価（5点満点の整数）：' . $review['rating'] . PHP_EOL;
         echo '感想：' . $review['comment'] . PHP_EOL;
-        echo '--------------------------'  . PHP_EOL;
     }
-}
 
-$reviews = [];
+    mysqli_free_result($results); //メモリの解放
+}
 
 $link = dbConnect();
 while (true) {
     echo '1. 読書ログを登録' . PHP_EOL;
     echo '2. 読書ログを表示' . PHP_EOL;
     echo '9. アプリケーションを終了' . PHP_EOL;
-    echo '番号を選択してください（1,2,9）:';
+    echo '番号を選択してください（1, 2, 9）：';
     $num = trim(fgets(STDIN));
     if ($num === '1') {
-        $reviews[] = createReview();
+        createReview($link);
         echo '---------------------------' . PHP_EOL;
     } elseif ($num === '2') {
-        listReviews($reviews);
+        listReviews($link);
     } elseif ($num === '9') {
         echo '---------------------------' . PHP_EOL;
         mysqli_close($link);
