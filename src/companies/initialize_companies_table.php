@@ -19,11 +19,9 @@ function createTable($link)
   $createTableSql = <<<EOT
 CREATE TABLE review (
     id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    book_title VARCHAR(255),
-    author VARCHAR(100),
-    status VARCHAR(10),
-    rating INTEGER,
-    comment VARCHAR(1000),
+    name VARCHAR(255),
+    establishment_date DATE,
+    founder VARCHAR(255),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) DEFAULT CHARACTER SET=utf8mb4
 EOT;

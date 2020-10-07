@@ -6,7 +6,7 @@ function validate($note)
     $errors = [];
     if (!strlen($note['category'])) {
         $errors['category'] = "p(プライベート)またはb(ビジネス)を入力してください";
-    } elseif ($note['category'] !== 'p' || $note['category'] !== 'b') {
+    } elseif ($note['category'] !== 'p' && $note['category'] !== 'b') {
         $errors['category'] = "p(プライベート)またはb(ビジネス)を入力してください";
     }
     if (!strlen($note['title'])) {

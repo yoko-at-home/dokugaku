@@ -17,9 +17,9 @@ function validate($review)
         $errors['author'] = "著者名は255文字以内にしてください";
     }
     // Statusのチェック
-    if (!in_array($review['status'], [1, 2, 3], true)) {
-        $errors['status'] = "1＝未読,2＝読んでる,3＝読了の番号で読書状況を選択してください。";
-    }
+    // if (!in_array($review['status'], [1, 2, 3], true)) {
+    //     $errors['status'] = "1＝未読,2＝読んでる,3＝読了の番号で読書状況を選択してください。";
+    // }
     // Ratingのチェック
     if (!strlen($review['rating'])) {
         $errors['rating'] = "評価してください";
@@ -63,10 +63,10 @@ function createReview($link)
     $review['title'] = trim(fgets(STDIN));
     echo '著者名：';
     $review['author'] = trim(fgets(STDIN));
-    echo '読書状況（1=未読、2=読んでる、3=読了）：';
-    $review['status'] = (int)trim(fgets(STDIN));
+    echo '読書状況：';
+    $review['status'] = trim(fgets(STDIN));
     echo '評価（5点満点の整数）：';
-    $review['rating'] = (int)trim(fgets(STDIN));
+    $review['rating'] = trim(fgets(STDIN));
     echo '感想：';
     $review['comment'] = trim(fgets(STDIN));
     //入力した値のバリデーション
@@ -124,7 +124,7 @@ function listReviews($link)
     {
         echo '書籍名：' . $review['book_title'] . PHP_EOL;
         echo '著者名：' . $review['author'] . PHP_EOL;
-        echo '読書状況（1＝未読,2＝読んでる,3＝読了）：' . $review['status'] . PHP_EOL;
+        echo '読書状況：' . $review['status'] . PHP_EOL;
         echo '評価（5点満点の整数）：' . $review['rating'] . PHP_EOL;
         echo '感想：' . $review['comment'] . PHP_EOL;
         echo '---------------------------' . PHP_EOL;
