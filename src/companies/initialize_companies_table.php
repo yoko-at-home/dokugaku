@@ -4,7 +4,7 @@ require_once __DIR__ . '/lib/mysqli.php';
 
 function dropTable($link)
 {
-  $dropTableSql = 'DROP TABLE IF EXISTS review';
+  $dropTableSql = 'DROP TABLE IF EXISTS companies';
   $result = mysqli_query($link, $dropTableSql);
   if ($result) {
     echo 'デーブルを削除しました' . PHP_EOL;
@@ -17,13 +17,13 @@ function dropTable($link)
 function createTable($link)
 {
   $createTableSql = <<<EOT
-CREATE TABLE review (
+CREATE TABLE companies (
     id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     name VARCHAR(255),
     establishment_date DATE,
     founder VARCHAR(255),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-) DEFAULT CHARACTER SET=utf8mb4
+) DEFAULT CHARSET=utf8mb4;
 EOT;
 
   $result = mysqli_query($link, $createTableSql);

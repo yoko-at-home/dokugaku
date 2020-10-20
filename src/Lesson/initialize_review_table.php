@@ -25,7 +25,7 @@ CREATE TABLE review (
     rating INTEGER,
     comment VARCHAR(1000),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-) DEFAULT CHARACTER SET=utf8mb4
+) DEFAULT CHARSET=utf8mb4;
 EOT;
 
   $result = mysqli_query($link, $createTableSql);

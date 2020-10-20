@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>読書ログの登録</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,11 +15,11 @@
     <form action="create.php" method="post">
         <div>
             <label for="title">書籍名</label>
-            <input type="text" id="title" name="title">
+            <input type="text" name="title" id="title">
         </div>
         <div>
             <label for="author">著者名</label>
-            <input type="text" id="author" name="author">
+            <input type="text" name="author"id="author" >
         </div>
         <div>
             <label>読書状況</label>
@@ -30,28 +29,24 @@
                     <label for="status1">未読</label>
                 </div>
                 <div>
-                    <input type="radio" name="status" id="status1" value="読んでる">
+                    <input type="radio" name="status" id="status2" value="読んでる">
                     <label for="status2">読んでる</label>
                 </div>
                 <div>
-                    <input type="radio" name="status" id="status1" value="読了">
+                    <input class="form-check-input" type="radio" name="status" id="status3" value="読了">
                     <label for="status3">読了</label>
                 </div>
             </div>
         </div>
         <div>
             <label for="rating">評価（5点満点の整数）</label>
-            <input type="number" id="rating" name="rating" vmax="5" min="1">
+            <input type="number"  name="rating"id="rating">
         </div>
         <div>
             <label for="comment">感想</label>
-            <textarea type="text" id="comment" name="comment" rows="10"></textarea>
+            <textarea type="text"  name="comment" id="comment" rows="10"></textarea>
         </div>
-        <div class="button">
-            <button type='submit'>
-                登録する
-            </button>
-        </div>
+        <button type="submit">登録する</button>
     </form>
 </body>
 
