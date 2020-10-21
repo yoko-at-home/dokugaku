@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>読書ログの登録</title>
+    <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body>
