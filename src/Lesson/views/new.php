@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>読書ログの登録</title>
     <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/css/app.css">
 </head>
 
 <body>
     <h1>読書ログ</h1>
-    <form action="create.php" method="post">
+    <form action="create.php" method="POST">
         <!-- ここにエラー処理 begins-->
         <?php if (count($errors)) : ?>
             <ul>
@@ -40,7 +41,7 @@
                     <label for="status2">読んでる</label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="status" id="status3" value="読了" <?php echo ($review['status'] === '読了' ? 'checked' : '') ?>>
+                    <input type="radio" name="status" id="status3" value="読了" <?php echo ($review['status'] === '読了' ? 'checked' : '') ?>>
                     <label for="status3">読了</label>
                 </div>
             </div>
