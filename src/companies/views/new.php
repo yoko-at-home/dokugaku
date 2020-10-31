@@ -24,11 +24,11 @@
                 <label for="name">会社名</label>
                 <input type="text" id="name" name="name" class="form-control" value="<?php echo $company['name'] ?>">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="establishment_date">設立日</label>
                 <input type="date" name="establishment_date" id="establishment_date" class="form-control" value="<?php echo $company['establishment_date'] ?>">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="founder">代表者</label>
                 <input type="text" name="founder" id="founder" class="form-control" value="<?php echo $company['founder'] ?>">
             </div>
