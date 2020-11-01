@@ -53,8 +53,10 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
 }
 
 @import "/var/www/html/vendor/twbs/bootstrap/scss/bootstrap.scss";
+// @import "src/vendor/twbs/bootstrap/scss/bootstrap.css";
 
 body {
   letter-spacing: 0.1em;
   text-align: justify;
+  display: flex;
 }
