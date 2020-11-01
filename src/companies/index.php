@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/lib/escape.php';
 require_once __DIR__ . '/lib/mysqli.php';
 
 function listCompanies($link)
