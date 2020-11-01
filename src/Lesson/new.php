@@ -8,4 +8,6 @@ $review = [
 ];
 $errors = [];
 
-include 'views/new.php';
+$title = "ブックログの登録";
+$content = __DIR__ . '/views/new.php';
+include __DIR__ . '/views/layout.php';

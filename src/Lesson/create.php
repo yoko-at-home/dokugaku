@@ -84,4 +84,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // もしエラーがあれば
 }
 
-include 'views/new.php';
+include __DIR__ . '/views/new.php';

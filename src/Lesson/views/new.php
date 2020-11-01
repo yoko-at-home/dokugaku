@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>読書ログの登録</title>
-    <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="stylesheets/css/app.css">
-</head>
-
-<body>
-    <div class="container-fluid ">
-        <header class="container-lg shadow-sm p-3">
-            <nav class="navbar navbar-expand-lg navbar-light ">
-                <a class="navbar-brand text-dark " href="index.php">
-                    <h1>読書ログ</h1>
-                </a>
-            </nav>
-        </header>
-        <div class="container-lg">
-            <div class="navbar">&nbsp;</div>
-            <div class="ml-5">
                 <h1 class="h2 text-dark">読書ログの登録</h1>
                 <form action="create.php" method="POST">
                     <!-- ここにエラー処理 begins-->
@@ -67,10 +44,3 @@
                     </div>
                     <button type="submit" class="btn btn-primary mt-4">登録する</button>
                 </form>
-            </div>
-        </div>
-        <footer>&nbsp;</footer>
-    </div>
-</body>
-
-</html>
