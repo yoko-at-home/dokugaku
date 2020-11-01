@@ -79,8 +79,8 @@ function createReview($link)
     }
     // 入力した値をSQLに渡す処理
     $sql = <<<EOT
-INSERT INTO review (
-    book_title,
+INSERT INTO reviews (
+    title,
     author,
     status,
     rating,
@@ -117,12 +117,12 @@ function listReviews($link)
     echo '--------------------------'  . PHP_EOL;
     echo '読書ログを表示します' . PHP_EOL;
 
-    $sql = 'SELECT id, book_title, author, status, rating, comment, created_at FROM review';
+    $sql = 'SELECT id, title, author, status, rating, comment, created_at FROM reviews';
     $results = mysqli_query($link, $sql); //成功したらmysqli_resultオブジェクトを返す
 
     while ($review = mysqli_fetch_assoc($results)) //mysqli_queryの結果行を連想配列で取得する
     {
-        echo '書籍名：' . $review['book_title'] . PHP_EOL;
+        echo '書籍名：' . $review['title'] . PHP_EOL;
         echo '著者名：' . $review['author'] . PHP_EOL;
         echo '読書状況：' . $review['status'] . PHP_EOL;
         echo '評価（5点満点の整数）：' . $review['rating'] . PHP_EOL;

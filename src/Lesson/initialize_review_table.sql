@@ -1,12 +1,11 @@
-DROP TABLE IF EXISTS review;
+DROP TABLE IF EXISTS reviews;
 
-CREATE TABLE review (
+CREATE TABLE reviews (
     id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    book_title VARCHAR(255),
+    title VARCHAR(255),
     author VARCHAR(100),
     status VARCHAR(10),
     rating INTEGER,
     comment VARCHAR(1000),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) DEFAULT CHARSET=utf8mb4;
-

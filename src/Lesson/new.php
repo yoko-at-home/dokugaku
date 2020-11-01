@@ -2,7 +2,7 @@
 $review = [
     'title' => '',
     'author' => '',
-    'status' => '未読',
+    'status' => '',
     'rating' => '',
     'comment' => ''
 ];

@@ -1,16 +1,21 @@
 <h1 class="h2 text-dark mt-4 mb-4"><?php echo $title; ?></h1>
 <a href="new.php">読書ログを登録する</a>
 <main>
-    <section>
-        <h2>忘れられた巨人</h2>
-        <div>著者：カズオイシグロ | 読書状況：読了 | 評価：5</div>
-        <p>歴史においても、個人においても過去とは必ずしも甘美というものでもない。私たちが前に進むためには、忘れなければならない巨人もあるのだということを考えさせられた一冊。忘却もまた賜物。</p>
-    </section>
-    <section>
-        <h2>わたしを離さないで</h2>
-        <div>著者：カズオイシグロ | 読書状況：読了 | 評価：4</div>
-        <p>世界の色を変えた本。</p>
-    </section>
+    <?php if (count($reviews) > 0) : ?>
+        <?php foreach ($reviews as $review) : ?>
+            <section>
+                <h2>
+                    <?php echo escape($review['title']); ?>
+                </h2>
+                <div>著者：<?php echo escape($review['author']); ?>&nbsp;|&nbsp;
+                    読書状況：<?php echo escape($review['status']); ?>&nbsp;|&nbsp;
+                    評価：<?php echo escape($review['rating']); ?></div>
+                <p><?php echo escape($review['comment']); ?></p>
+            </section>
+        <?php endforeach; ?>
+    <?php else : ?>
+        <p>本の登録がありません。</p>
+    <?php endif; ?>
 
 </main>
 

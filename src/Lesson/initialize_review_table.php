@@ -4,7 +4,7 @@ require_once __DIR__ . '/lib/mysqli.php';
 
 function dropTable($link)
 {
-  $dropTableSql = 'DROP TABLE IF EXISTS review';
+  $dropTableSql = 'DROP TABLE IF EXISTS reviews';
   $result = mysqli_query($link, $dropTableSql);
   if ($result) {
     echo 'デーブルを削除しました' . PHP_EOL;
@@ -17,9 +17,9 @@ function dropTable($link)
 function createTable($link)
 {
   $createTableSql = <<<EOT
-CREATE TABLE review (
+CREATE TABLE reviews (
     id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    book_title VARCHAR(255),
+    title VARCHAR(255),
     author VARCHAR(100),
     status VARCHAR(10),
     rating INTEGER,
