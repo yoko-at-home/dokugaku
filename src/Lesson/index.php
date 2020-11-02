@@ -5,7 +5,8 @@ require_once __DIR__ . '/lib/mysqli.php';
 function listReviews($link)
 {
     $reviews = [];
-    $sql = 'SELECT id, title, author, status, rating, comment, created_at FROM reviews;';
+    $sql = 'SELECT id, title, author, status, rating, comment, created_at FROM reviews;
+    ';
     $results = mysqli_query($link, $sql);
 
     while ($review = mysqli_fetch_assoc($results)) {
