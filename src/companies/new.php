@@ -7,6 +7,7 @@ $company = [
 $errors = [];
 
 $title = "会社情報の登録";
-$content = __DIR__ . '/views/header.php';
+$head = __DIR__ . '/views/head.php';
 $content = __DIR__ . '/views/new.php';
+// include __DIR__ . '/views/head.php';
 include __DIR__ . '/views/layout.php';

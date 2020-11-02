@@ -21,6 +21,6 @@ $companies = listCompanies($link);
 
 
 $title = "会社情報の一覧";
-$header = __DIR__ . '/views/header.php';
+$head = __DIR__ . '/views/head.php';
 $content = __DIR__ . '/views/index.php';
 include  __DIR__ . '/views/layout.php';

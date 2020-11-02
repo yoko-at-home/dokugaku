@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
-<?php include $header; ?>
+
+<head>
+
+    <?php include $head; ?>
+</head>
 
 <body>
     <div class="container">
