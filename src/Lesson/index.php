@@ -20,6 +20,6 @@ $reviews = listReviews($link);
 
 
 $title = "読書ログ一覧";
-//$head = __DIR__ . '/views/head.php';
+$head = __DIR__ . '/views/head.php';
 $content = __DIR__ . '/views/index.php';
 include  __DIR__ . '/views/layout.php';
