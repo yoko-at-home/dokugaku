@@ -84,4 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // もしエラーがあれば
 }
 
-include __DIR__ . '/views/new.php';
+//$head = __DIR__ . '/views/head.php';
+//$content = __DIR__ . '/views/new.php';
+include __DIR__ . '/views/layout.php';
