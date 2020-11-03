@@ -4,8 +4,8 @@ require_once __DIR__ . '/lib/mysqli.php';
 function createReview($link, $review)
 {
     $sql = <<<EOT
-INSERT INTO review (
-  book_title,
+INSERT INTO reviews (
+  title,
   author,
   status,
   rating,
@@ -84,4 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // もしエラーがあれば
 }
 
-include 'views/new.php';
+$head = __DIR__ . '/views/head.php';
+$content = __DIR__ . '/views/new.php';
+include __DIR__ . '/views/layout.php';

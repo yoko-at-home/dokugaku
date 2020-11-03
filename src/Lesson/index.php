@@ -1,17 +1,25 @@
 <?php
-?>
-<!DOCTYPE html>
-<html lang="ja">
+require_once __DIR__ . '/lib/escape.php';
+require_once __DIR__ . '/lib/mysqli.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>読書ログ一覧</title>
-</head>
+function listReviews($link)
+{
+    $reviews = [];
+    $sql = 'SELECT id, title, author, status, rating, comment, created_at FROM reviews;
+    ';
+    $results = mysqli_query($link, $sql);
+    while ($review = mysqli_fetch_assoc($results)) {
+        $reviews[] = $review;
+    }
+    mysqli_free_result($results);
+    return $reviews;
+}
 
-<body>
-    <h1>読書ログ一覧</h1>
+$link = dbConnect();
+$reviews = listReviews($link);
 
-</body>
 
-</html>
+$title = "読書ログ一覧";
+$head = __DIR__ . '/views/head.php';
+$content = __DIR__ . '/views/index.php';
+include  __DIR__ . '/views/layout.php';

@@ -1,17 +1,26 @@
 <?php
-?>
-<!DOCTYPE html>
-<html lang="ja">
+require_once __DIR__ . '/lib/escape.php';
+require_once __DIR__ . '/lib/mysqli.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会社情報の一覧</title>
-</head>
+function listCompanies($link)
+{
+    $companies = [];
+    $sql = 'SELECT name, establishment_date, founder FROM companies;
+    ';
+    $results = mysqli_query($link, $sql);
 
-<body>
-    <h1>会社情報の一覧</h1>
+    while ($company = mysqli_fetch_assoc($results)) {
+        $companies[] = $company;
+    }
+    mysqli_free_result($results);
+    return $companies;
+}
 
-</body>
+$link = dbConnect();
+$companies = listCompanies($link);
 
-</html>
+
+$title = "会社情報の一覧";
+$head = __DIR__ . '/views/head.php';
+$content = __DIR__ . '/views/index.php';
+include  __DIR__ . '/views/layout.php';

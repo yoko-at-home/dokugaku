@@ -61,4 +61,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include 'views/new.php';
+include __DIR__ . '/views/new.php';
+include __DIR__ . '/views/head.php';

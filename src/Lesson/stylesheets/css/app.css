@@ -6082,3 +6082,16 @@ body {
   letter-spacing: 0.1em;
   text-align: justify;
   display: flex; }
+
+.error_message li {
+  list-style: none;
+  text-decoration: none; }
+
+.label__status {
+  line-height: 18px;
+  margin-bottom: 0;
+  margin-top: 3spx; }
+
+.status__wrapper {
+  line-height: 18px;
+  align-items: center; }
